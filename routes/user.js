@@ -7,8 +7,7 @@ console.log('inside user router');
 router.get('/signUp',userController.signUp);
 router.post('/createUser',userController.createUser);
 router.post('/getUser',userController.getUser);
-
-
+router.get('/report/:id',userController.report);
 
 
 

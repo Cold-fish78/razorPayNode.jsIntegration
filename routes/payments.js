@@ -19,7 +19,7 @@ router.get('/', function(req, res, next) {
 });
 
 /**
- * Checkout Page
+ * 
  * 
  */
 router.post('/order', paymentController.order);

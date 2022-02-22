@@ -25,7 +25,12 @@ const paymentDetailsSchema = new mongoose.Schema({
 	},
 	status: {
 		type: String
+	},
+	mobileNumber: {
+		type: String
 	}
 })
 
-module.exports = mongoose.model('PaymentDetail', paymentDetailsSchema)
+// module.exports = mongoose.model('PaymentDetail', paymentDetailsSchema)
+const PaymentDetail = mongoose.model('PaymentDetail', paymentDetailsSchema);
+module.exports = PaymentDetail;

@@ -1,8 +1,9 @@
 <div class="d-flex justify-content-center">
 	<form method="POST" action="/payment/order">
 		<div class="mb-3">
-		  <label for="amountInput" class="form-label">Enter Amount</label>
-		  <input name="amount" type="number" min="1" class="form-control form-control-lg" id="amountInput" aria-describedby="amountHelp" required>
+		  <!-- <label for="amountInput" class="form-label">Enter Amount</label> -->
+		  <input name="amount" type="number" min="1" class="form-control form-control-lg" id="amountInput" aria-describedby="amountHelp" required placeholder="Enter amount">
+		  <input name="mobileNumber" type="number" min="1" class="form-control form-control-lg" id="numberInput" aria-describedby="amountHelp" required style="margin-top: 2vh;" placeholder="Enter mobile number">
 		  <div id="amountHelp" class="form-text">Bhaiyon aur Beheno, ek rupaiya, sau rupaiya. Kuch bhi chalega.</div>
 		</div>
 

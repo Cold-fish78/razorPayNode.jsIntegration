@@ -30,7 +30,7 @@ app.use(bodyParser.urlencoded({
 	extended:true
 }));
 
-// Connect to MongoDB
+
 
 
 app.use('/',require('./routes/index'));

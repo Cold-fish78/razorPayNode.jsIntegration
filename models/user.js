@@ -15,7 +15,13 @@ const userSchema = new mongoose.Schema({
     name: {
         type: String,
         required: true
-    }
+    },
+    donations: [
+        { 
+            type: mongoose.Schema.Types.ObjectId,
+            ref: 'Friendship' 
+        }
+    ]
 }, {
     timestamps: true
 });

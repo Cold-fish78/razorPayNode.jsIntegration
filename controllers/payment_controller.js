@@ -64,6 +64,7 @@ module.exports.order = function(req, res, next) {
 	.then(async (response) => {
 		console.log(response);
 		const razorpayKeyId = process.env.KEY_ID
+		console.log(req.body);
 		// Save orderId and other payment details
 		const paymentDetail = new PaymentDetail({
 			orderId: response.id,
@@ -71,7 +72,8 @@ module.exports.order = function(req, res, next) {
 			amount: response.amount,
 			currency: response.currency,
 			createdAt: response.created_at,
-			status: response.status
+			status: response.status,
+			mobileNumber : req.body.mobileNumber
 		})
 		try {
 			// Render Order Confirmation page if saved succesfully

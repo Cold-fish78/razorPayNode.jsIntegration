@@ -1,0 +1,21 @@
+<div>
+<h1>this is user report</h1>
+
+
+
+<ul class="timeline">
+    <% for (var i = 0; i < profile_user.length; i++) { %>
+    <li class="timeline-yellow">
+        <div class="timeline-time">
+            <span class="date" style="text-align:left">
+          amount :  <%= profile_user[i].amount/100 %> INR<br>
+         Date :   <%=profile_user[i].createdAt%> <br>
+         Status :   <%=profile_user[i].status%> <br>
+            </span>
+         
+        </div>
+    </li>
+    <% } %>
+</ul>
+
+</div>

@@ -1,4 +1,5 @@
 const User = require('../models/user');
+const PaymentDetail =  require('../models/payment-detail')
 
 module.exports.signIn = function (req, res) {
   return res.render('pages/SignIn', { title: "user login" });
@@ -50,7 +51,7 @@ module.exports.getUser = function (req, res) {
     //    };
     // });
       if (user.password == req.body.password) {
-        return res.render('profile', { title: 'this is user profile' })
+        return res.render('pages/profile', { title: 'this is user profile' , profile_user : user })
       } else {
         console.log("Incorrct password");
       };
@@ -64,4 +65,28 @@ module.exports.getUser = function (req, res) {
 }
 module.exports.contactUs = function(req,res){
   return res.render('contact',{title : "Contact us"});
+}
+module.exports.report = function(req,res){
+  console.log(req.params.id);
+  
+  
+  PaymentDetail.find({ mobileNumber: req.params.id }, function (err, user) {
+    console.log(user[0]);
+    console.log(user[1]);
+    if (err) {
+      console.log("error in getReport module" + err);
+    }
+    
+    if (user) {
+      return res.render('pages/reports',{title : 'report page', profile_user : user});
+     
+    }
+    console.log("internal server error ");
+  })
+
+ 
+ 
+
+
+
 }
